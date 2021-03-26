@@ -38,8 +38,8 @@ page = uic.loadUi('page.ui')
 
 page.timer = QTimer()
 page.timer.timeout.connect(capture_frame)
-page.pushButton.clicked.connect(start_camera)
-page.pushButton_2.clicked.connect(stop_camera)
+page.startbut.clicked.connect(start_camera)
+page.stopbut.clicked.connect(stop_camera)
 
 page.show()
 
