@@ -3,6 +3,10 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import QTimer
 from PyQt5.QtGui import QPixmap, QImage
 
+
+
+
+
 frame_rate = 30
 
 cam = cv2.VideoCapture(0)
