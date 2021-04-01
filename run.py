@@ -5,22 +5,15 @@ from PyQt5.QtGui import QPixmap, QImage
 import tensorflow.keras
 import numpy as np
 
-
 np.set_printoptions(suppress=True)
-
 # Load the model
 model = tensorflow.keras.models.load_model('keras_model.h5')
 
-
 def preprocess(img):
-    img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
-    
-    img = cv2.resize(img,(224,224), interpolation=cv2.INTER_NEAREST)
-    
-    normal_img = (img.astype(np.float32) / 127.0) - 1
-    
-    ready_img = normal_img.reshape(1,224,224,3)
-    
+    img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)   
+    img = cv2.resize(img,(224,224), interpolation=cv2.INTER_NEAREST)    
+    normal_img = (img.astype(np.float32) / 127.0) - 1    
+    ready_img = normal_img.reshape(1,224,224,3)    
     return ready_img
 
 def get_prediction(img,model):
@@ -62,7 +55,15 @@ def start_camera() -> None:
     page.timer.start(round(frame_rate/1000))
 
 def stop_camera() -> None:
+    frame = np.dstack((np.zeros((480,640)),
+                       np.zeros((480,640)),
+                       np.zeros((480,640))))
+    height, width, channel = frame.shape
+    step = channel * width
+    qImg = QImage(frame.data, width, height, step, QImage.Format_RGB888)
+    page.label.setPixmap(QPixmap.fromImage(qImg))
     page.timer.stop()
+
 
 
 app = QtWidgets.QApplication([])

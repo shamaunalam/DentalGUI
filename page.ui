@@ -32,7 +32,7 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color:'blue';color:'white'</string>
+        <string notr="true">background-color:'yellow';color:'black'</string>
        </property>
        <property name="text">
         <string>Process</string>
@@ -47,7 +47,7 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color:'green';color:'white'</string>
+        <string notr="true">background-color:'green';color:'black'</string>
        </property>
        <property name="text">
         <string>Start</string>
@@ -93,7 +93,7 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color:'red';color:'white'</string>
+        <string notr="true">background-color:'red';color:'black'</string>
        </property>
        <property name="text">
         <string>Stop</string>
@@ -108,7 +108,7 @@
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">background-color:'blck';color:'white'</string>
+        <string notr="true">background-color:'orange';color:'black'</string>
        </property>
        <property name="text">
         <string>Save</string>
