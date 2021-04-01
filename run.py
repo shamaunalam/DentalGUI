@@ -39,12 +39,13 @@ def capture_frame() -> None:
     None.
 
     """
+    
     if cam.isOpened():
         read, frame = cam.read()
         if read:
             frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             pred = get_prediction(frame,model)
-            cv2.putText(frame, pred, (10,200),cv2.FONT_HERSHEY_SIMPLEX,
+            cv2.putText(frame, pred, (10,400),cv2.FONT_HERSHEY_SIMPLEX,
                         1, (0,0,255), 2, cv2.LINE_AA)
             height, width, channel = frame.shape
             step = channel * width
